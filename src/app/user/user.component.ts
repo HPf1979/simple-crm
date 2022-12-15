@@ -10,6 +10,7 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent implements OnInit {
   user = new User();
+  birthDate: Date;
 
   constructor(public dialog: MatDialog) {}
 
