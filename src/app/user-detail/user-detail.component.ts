@@ -37,7 +37,6 @@ export class UserDetailComponent implements OnInit {
       .doc(this.userId)
       .valueChanges()
       .subscribe((user: any) => {
-        //this.user = user;
         this.user = new User(user);
         console.log('Retrieve user', this.user);
       });

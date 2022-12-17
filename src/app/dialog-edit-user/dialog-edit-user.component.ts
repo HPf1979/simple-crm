@@ -22,10 +22,15 @@ export class DialogEditUserComponent implements OnInit {
   ngOnInit(): void {}
 
   saveUser() {
-    //this.loading = true;
+    this.loading = true;
     this.firestore
       .collection('users')
       .doc(this.userId)
-      .update(this.user.toJSON());
+      .update(this.user.toJSON())
+      .then((result: any) => {
+        this.loading = false;
+        console.log('Edit address finished', result);
+        this.dialogRef.close();
+      });
   }
 }
