@@ -9,7 +9,7 @@ import { User } from 'src/models/user.class';
   styleUrls: ['./dialog-edit-user.component.scss'],
 })
 export class DialogEditUserComponent implements OnInit {
-  user: User;
+  user: User = new User();
   loading = false;
   userId: string;
   birthDate: Date;
