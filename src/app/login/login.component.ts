@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,8 +20,7 @@ export class LoginComponent implements OnInit {
     password: '',
   };
 
-  constructor() {}
-  private router: Router;
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     const localData = localStorage.getItem('signUpUsers');
@@ -47,8 +47,7 @@ export class LoginComponent implements OnInit {
         m.password == this.loginObj.password
     );
     if (isUserExist != undefined) {
-      this.router.navigate(['/home']);
-      alert('User Login Succesfully');
+      this.router.navigate(['/home']), alert('User Login Succesfully');
     } else {
       alert('Wrong credentials');
     }
