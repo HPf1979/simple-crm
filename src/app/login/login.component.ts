@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   };
 
   constructor() {}
+  private router: Router;
 
   ngOnInit(): void {
     const localData = localStorage.getItem('signUpUsers');
@@ -45,6 +47,7 @@ export class LoginComponent implements OnInit {
         m.password == this.loginObj.password
     );
     if (isUserExist != undefined) {
+      this.router.navigate(['/home']);
       alert('User Login Succesfully');
     } else {
       alert('Wrong credentials');

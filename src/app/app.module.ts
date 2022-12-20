@@ -31,7 +31,9 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { DialogEditAddressComponent } from './dialog-edit-address/dialog-edit-address.component';
 import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
+import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,7 @@ import { LoginComponent } from './login/login.component';
     UserDetailComponent,
     DialogEditAddressComponent,
     DialogEditUserComponent,
+    HomeComponent,
     LoginComponent,
   ],
   imports: [
@@ -59,6 +62,7 @@ import { LoginComponent } from './login/login.component';
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
+    RouterModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
